@@ -34,6 +34,7 @@ class Hangman():
                     index = self.filled_word.index(letter)
                     self.filled_word[index] = 0
                     self.empty_word[index] = self.guess
+                    #Would like to know a better way of doing this section
             print (f"{self.empty_word}\n")
             if self.num_letters == 0:
                 print (" YOU WIN!!!!")
