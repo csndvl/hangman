@@ -1,7 +1,7 @@
 # Hangman
 Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
 
-# Table of Contents
+## Table of Contents
 - Description of the project
 - Usage instruction
 - Installation instructions
