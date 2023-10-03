@@ -1,6 +1,8 @@
 import random
 
+
 class Hangman():
+    '''Creates a hangman class.'''
 
     def __init__(self, word_list, num_lives = None):
         self.word_list = word_list
@@ -9,23 +11,16 @@ class Hangman():
         self.num_letters = len(self.word)
         self.list_of_guesses = []
 
-        self.empty_word = []
-        for letters  in self.word:
-            letters = "_"
-            self.empty_word.append(letters)
-
-        self.filled_word = []
-        for letters in self.word:
-            self.filled_word.append(letters)
+        self.empty_word = ["_" for _ in self.word] #Turns the word to be guesses into a blank letter  
+        self.filled_word = list(self.word) #Puts the word to be guessed into a list; letter by letter
 
         print(f"You have {self.num_lives} lives")
+        print ("Please guess the word")
         print(f"{self.empty_word}\n")
-
         Hangman.ask_for_input(self)
-        # self.word_guessed = filled_word
 
-    def check_guess(self, guess):
-        self.guess = guess.lower()
+    def check_guess(self):
+        '''Checks the letter guessed by the user if it's in the word or not.'''
         if self.guess in self.word:
             print (f"Good guess! {self.guess} is in the word")
             for letter in self.filled_word:
@@ -53,21 +48,24 @@ class Hangman():
                 Hangman.ask_for_input(self)
                 
     def ask_for_input(self):
+        '''Asks the user to guess a letter.'''
         self.guess = input("Please enter a letter: ")
+        self.guess = self.guess.lower()
         while True:
-            if self.guess.isalpha() == True and len(self.guess) == 1:
-                if self.guess in self.list_of_guesses:
+            if self.guess.isalpha() == True and len(self.guess) == 1: #This line checks if the input is a singular string.
+                if self.guess in self.list_of_guesses: #Checks whether the guess has been tried already.
                     print("You already tried that letter\n")
                     Hangman.ask_for_input(self)
                 else:
-                    self.list_of_guesses.append(self.guess)
-                    Hangman.check_guess(self, self.guess)
+                    self.list_of_guesses.append(self.guess) #Adds the new letter to the list of guesses.
+                    Hangman.check_guess(self)
             else:
                 print ("Invalid letter\n")
                 Hangman.ask_for_input(self)
 
 
 def play_game(word_list):
+    '''Starts the game.'''
     num_lives = 5
     game1 = Hangman(word_list, num_lives)   
 
