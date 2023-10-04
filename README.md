@@ -21,7 +21,12 @@ Hangman is a classic game in which a player thinks of a word and the other playe
 - You win the game once all letters have been correctly guessed.
 
 ## Installation instructions
+- Clone the file from github and install python 3.10.7
 
 ## File structure of the project
+- Milestone 2: Requires basic Python knowledge, such as if-else statements and loops.
+- Milestone 3: Checks if the guesses letter is in the randomly chosen word.
+- Milestone 4: Use Object Oriented Programming paradigm to develop a complete Hangman game.
+- Milestone 5: The complete Hangman Game
 
 ## License information
