@@ -24,9 +24,31 @@ Hangman is a classic game in which a player thinks of a word and the other playe
 - Clone the file from github and install python 3.10.7
 
 ## File structure of the project
-- Milestone 2: Requires basic Python knowledge, such as if-else statements and loops.
-- Milestone 3: Checks if the guesses letter is in the randomly chosen word.
-- Milestone 4: Use Object Oriented Programming paradigm to develop a complete Hangman game.
-- Milestone 5: The complete Hangman Game
+### Milestone 2: Requires basic Python knowledge, such as if-else statements and loops.
+- M2 requires to define the list of possible word and also choose a random word from the list. Using random library, a random word can be picked inside a list. This is the code below:
+```
+#Word list:
+["mango","banana","pineapple","strawberry","apple"]
 
-## License information
+def __init__(self, word_list, num_lives = None):
+        self.word_list = word_list
+        self.num_lives = 5 
+        self.word = random.choice(word_list)
+```
+The random word is saved in the variable "self.word"
+
+### Milestone 3: Checks if the guessed character is in the word.
+- M3 requires to check if the guessed letters is in the randomly chosen word. This was achieved inside the check_guess method which takes in self.guess variable that contains the user's letter.
+- A simple if statement checks if the self.word variable contains the user's letter
+```
+ if self.guess in self.word:
+            print (f"Good guess! {self.guess} is in the word")
+else:
+
+            print (f"Sorry, {self.guess} is not in the word")
+```
+
+### Milestone 4: Use Object Oriented Programming paradigm to develop a complete Hangman game.
+
+### Milestone 5: The complete Hangman Game
+
